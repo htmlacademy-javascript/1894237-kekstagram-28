@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Максим Пильский](https://up.htmlacademy.ru/javascript/28/user/1894237).
-
+* Наставник: [Александр Бабченко](https://htmlacademy.ru/profile/babtshe).
 
 ---
 
