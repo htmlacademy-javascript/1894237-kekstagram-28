@@ -1,28 +1,28 @@
-const checkingLengthString = (text, сharacters) => text.length <= сharacters;
+const checkStringLength = (text, сharacters) => text.length <= сharacters;
 
-checkingLengthString('проверяемая строка', 10);
+checkStringLength('проверяемая строка', 10);
 
-function checkPalindrome (stringToTest) {
+const checkPalindrome = function (stringToTest) {
   const invertedString = stringToTest.split('').reverse().join('');
   if (invertedString.toLowerCase().replace(/\s/g,'') === stringToTest.toLowerCase().replace(/\s/g,'')) {
-    return 'строка является палиндромом';
+    return true;
   }
-  return 'это не палиндром';
+  return false;
 }
 
 checkPalindrome('Леша на полке клопа нашел');
 
-function NumbersFromString (stringToTest) {
+const getNumbersFromAString = function (stringToTest) {
   if (Number.isInteger(stringToTest)) {
     return Math.abs(stringToTest);
   }
-  const numbers = stringToTest.replace(/[^0-9\s]/gi,'').split(' ').join('');
+  const numbers = stringToTest.replace(/[^0-9]/g,'');
   return Number(numbers);
 }
 
-NumbersFromString('1 кефир, 0.5 батона');
+getNumbersFromAString('агент 007');
 
-function StringToFileAddress (originalString, minimumLength, additionalCharacters) {
+const GetFileAddress = function (originalString, minimumLength, additionalCharacters) {
 
   const characters = minimumLength - originalString.length;
 
@@ -30,7 +30,8 @@ function StringToFileAddress (originalString, minimumLength, additionalCharacter
     additionalCharacters = additionalCharacters.substring (0, characters);
     originalString = additionalCharacters + originalString;
     return originalString;
-  } else if (additionalCharacters.length < characters) {
+  }
+  if (additionalCharacters.length < characters) {
 
     while (originalString.length !== minimumLength) {
       originalString = additionalCharacters + originalString;
@@ -43,4 +44,4 @@ function StringToFileAddress (originalString, minimumLength, additionalCharacter
   return originalString;
 }
 
-StringToFileAddress('q', 4, 'we');
+GetFileAddress('q', 4, 'we');
