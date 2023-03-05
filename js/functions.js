@@ -22,7 +22,7 @@ const getNumbersFromAString = (stringToTest) => {
 
 getNumbersFromAString('агент 007');
 
-const GetFileAddress = (originalString, minimumLength, additionalCharacters) => {
+const GetFileAddress =  (originalString, minimumLength, additionalCharacters) {
 
   const characters = minimumLength - originalString.length;
 
