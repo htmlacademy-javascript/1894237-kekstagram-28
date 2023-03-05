@@ -2,7 +2,7 @@ const checkStringLength = (text, сharacters) => text.length <= сharacters;
 
 checkStringLength('проверяемая строка', 10);
 
-const checkPalindrome = function (stringToTest) {
+const checkPalindrome = (stringToTest) => {
   const invertedString = stringToTest.split('').reverse().join('');
   if (invertedString.toLowerCase().replace(/\s/g,'') === stringToTest.toLowerCase().replace(/\s/g,'')) {
     return true;
@@ -12,7 +12,7 @@ const checkPalindrome = function (stringToTest) {
 
 checkPalindrome('Леша на полке клопа нашел');
 
-const getNumbersFromAString = function (stringToTest) {
+const getNumbersFromAString = (stringToTest) => {
   if (Number.isInteger(stringToTest)) {
     return Math.abs(stringToTest);
   }
@@ -22,7 +22,7 @@ const getNumbersFromAString = function (stringToTest) {
 
 getNumbersFromAString('агент 007');
 
-const GetFileAddress = function (originalString, minimumLength, additionalCharacters) {
+const GetFileAddress = (originalString, minimumLength, additionalCharacters) => {
 
   const characters = minimumLength - originalString.length;
 
