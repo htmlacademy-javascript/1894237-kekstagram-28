@@ -10,7 +10,7 @@ const checkPalindrome = (stringToTest) => {
   return false;
 }
 
-checkPalindrome('А роза упала на лапу Азора');
+checkPalindrome('Леша на полке клопа нашел');
 
 const getNumbersFromAString = (stringToTest) => {
   if (Number.isInteger(stringToTest)) {
