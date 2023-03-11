@@ -1,4 +1,4 @@
-const DESCRIPTION = [
+const DESCRIPTIONS = [
   'Вспоминая лето',
   'Бой быков',
   'Мы с друзьями',
@@ -23,10 +23,10 @@ const DESCRIPTION = [
   'Звездное небо',
   'Моя бывшая школа',
   'Тратуар',
-  'Дерево',
+  'Дерево'
 ];
 
-const NAME = [
+const NAMES = [
   'Артём',
   'Иван',
   'Екатерина',
@@ -44,8 +44,9 @@ const COMMENTARIES = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
-previousValuesId = [];
-previousValuesUrl = [];
+let currentValueId = 0;
+let currentValueUrl = 0;
+
 
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -54,39 +55,29 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const creatingCommentaries = () => ({
+const createCommentaries = () => ({
   id: getRandomInteger(1,300),
   avatar: `img/avatar/${ getRandomInteger (1, 6)}.svg`,
   message: COMMENTARIES[getRandomInteger(0, COMMENTARIES.length - 1)] ,
-  name: NAME[getRandomInteger(0, NAME.length - 1)],
+  name: NAMES[getRandomInteger(0, NAMES.length - 1)],
 });
 
-function createRandomIdFromRangeGenerator (min, max) {
-  let currentValue = getRandomInteger(min, max);
-
-  while (previousValuesId.includes(currentValue)) {
-    currentValue = getRandomInteger(min, max);
-  }
-  previousValuesId.push(currentValue);
-  return currentValue;
+function createId() {
+  currentValueId += 1;
+  return currentValueId;
 }
 
-function createRandomUrlFromRangeGenerator (min, max) {
-  let currentValue = getRandomInteger(min, max);
-
-  while (previousValuesUrl.includes(currentValue)) {
-    currentValue = getRandomInteger(min, max);
-  }
-  previousValuesUrl.push(currentValue);
-  return currentValue;
+function createUrl() {
+  currentValueUrl += 1;
+  return currentValueUrl;
 }
 
-const creatingMoreDetails = () => ({
-  id: createRandomIdFromRangeGenerator(1, 25),
-  url: `photos/${ createRandomUrlFromRangeGenerator (1, 25)}`,
-  description: DESCRIPTION[getRandomInteger(0, DESCRIPTION.length - 1)],
+const createMoreDetails = () => ({
+  id: createId(),
+  url: `photos/${ createUrl()}`,
+  description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
   likes: getRandomInteger(15,200),
-  comment: creatingCommentaries(),
+  comment: createCommentaries(),
 });
 
-const storageMoreDetails = Array.from({length: 25}, creatingMoreDetails);
+const storageMoreDetails = Array.from({length: 25}, createMoreDetails);
