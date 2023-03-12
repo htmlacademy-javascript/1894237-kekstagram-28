@@ -47,7 +47,6 @@ const COMMENTARIES = [
 let currentValueId = 0;
 let currentValueUrl = 0;
 
-
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
   const upper = Math.floor(Math.max(a, b));
