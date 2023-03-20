@@ -79,4 +79,6 @@ const createMoreDetails = () => ({
   comment: createCommentaries(),
 });
 
+/* eslint-disable */
 const storageMoreDetails = Array.from({length: 25}, createMoreDetails);
+/* eslint-enable */
