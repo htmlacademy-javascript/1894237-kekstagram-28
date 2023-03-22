@@ -5,7 +5,6 @@ import {DESCRIPTIONS} from './data.js';
 import {NAMES} from './data.js';
 import {COMMENTARIES} from './data.js';
 
-
 const createCommentaries = () => ({
   id: getRandomInteger(1,300),
   avatar: `img/avatar/${ getRandomInteger (1, 6)}.svg`,
