@@ -1,4 +1,3 @@
-/* eslint-disable */
-import {storageMoreDetails} from './create-comments.js';
-/* eslint-enable */
-import './functions.js';
+import {renderPicture} from './thumbnail-rendering.js';
+
+renderPicture();
