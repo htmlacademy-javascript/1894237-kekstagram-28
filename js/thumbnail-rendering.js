@@ -6,11 +6,12 @@ const pictureListFragment = document.createDocumentFragment();
 const pictureListElement = document.querySelector('.pictures');
 
 const renderPicture = () => {
-  dataStores.forEach(({url, likes, comment}) => {
+  dataStores.forEach(({id, url, likes, comment}) => {
     const pictureElement = pictureTemplate.cloneNode(true);
     pictureElement.querySelector('.picture__img').src = `./${url}.jpg`;
     pictureElement.querySelector('.picture__likes').textContent = likes;
     pictureElement.querySelector('.picture__comments').textContent = comment.message;
+    pictureElement.dataset.pictureElementId = id;
     pictureListFragment.append(pictureElement);
   });
   pictureListElement.append(pictureListFragment);
@@ -18,3 +19,4 @@ const renderPicture = () => {
 };
 
 export {renderPicture};
+export {dataStores};
