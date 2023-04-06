@@ -7,9 +7,9 @@ const pictureTemplate = document.querySelector('.social__comment');
 const downloadMoreButton = document.querySelector('.comments-loader');
 const body = document.querySelector('body');
 const buttonCancel = document.querySelector('.big-picture__cancel');
-const COMMENTS_PER_PORTION = 5;
 const commentsLoader = document.querySelector('.comments-loader');
 const socialCommentsCount = document.querySelector('.social__comment-count');
+const COMMENTS_PER_PORTION = 5;
 
 let numberOfMessagesShown = 0;
 let allMessage = [];
